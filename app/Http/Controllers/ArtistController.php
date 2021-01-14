@@ -10,15 +10,16 @@ use Illuminate\Support\Facades\DB;
 class ArtistController extends Controller
 {
     public function artists(){
-        $artists = DB::table('artists')->get();
-        return view('artists')->with('artists',$artists);
+        $artists = Artist::all();
+        return view('artists', compact('artists'));
     }
-    public function artist($id){
-        $artist_album = Album::get();
-        $artist = Artist::where('id',$id)->get();
+
+    public function artist(Artist $id){
+//        $artist_album = Album::get();
+//        $artist = Artist::where('id', $id)->get();
         //dd($artist_album);
 //        return view('artist')->with('artist',$artist);
-        return view('artist', compact('artist_album'))->with('artist',$artist);
+        return view('artist', compact('id'));
        // )->with('artist',$artist);
     }
 }

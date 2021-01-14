@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Artist extends Model
 {
     public function album(){
-        return $this->belongsToMany(Album::class);
+        return $this->hasMany(Album::class);
     }
     public function genre(){
         return $this->belongsToMany(Genre::class);

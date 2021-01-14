@@ -13,10 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', [\App\Http\Controllers\homeController::class,'index']);
+Route::get('/', [\App\Http\Controllers\homeController::class,'index']);
 
 Route::get('/genre/{id}', [\App\Http\Controllers\GenreController::class,'genre']);
 Route::get('/genres', [\App\Http\Controllers\GenreController::class,'genres']);
@@ -25,8 +22,8 @@ Route::get('/genres', [\App\Http\Controllers\GenreController::class,'genres']);
 Route::get('/albums', [\App\Http\Controllers\AlbumController::class,'albums']);
 Route::get('/album/{id}', [\App\Http\Controllers\AlbumController::class,'album']);
 
-Route::get('/artist/{id}', [\App\Http\Controllers\ArtistController::class,'artist']);
 Route::get('/artists', [\App\Http\Controllers\ArtistController::class,'artists']);
+Route::get('/artist/{id}', [\App\Http\Controllers\ArtistController::class,'artist'])->name('single.artist');
 
 
 

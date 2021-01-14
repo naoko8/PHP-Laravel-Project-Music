@@ -12,6 +12,7 @@ class AlbumController extends Controller
         $albums = DB::table('albums')->get();
         return view('albums')->with('albums',$albums);
     }
+
     public function album($id){
         $album = Album::where('id',$id)->get();
         return view('album')->with('album',$album);

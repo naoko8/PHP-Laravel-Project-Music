@@ -11,6 +11,6 @@ class Album extends Model
         return $this->belongsTo(Artist::class);
     }
     public function genre(){
-        return $this->belongsTo(Genre::class);
+        return $this->belongsToMany(Genre::class);
     }
 }

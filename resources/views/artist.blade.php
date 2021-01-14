@@ -1,8 +1,9 @@
-@foreach($artist as $artists)
-<p>
-    {{$artists->name}}
-</p>
-    <img src="{{$artists->artist_img}}">
+@extends('home')
 
-     {{artist()->album->pluck('album_name')}}
-@endforeach
+@section('content')
+
+    {{ $id->name }}
+    {{ $id->album }}
+
+@endsection
+

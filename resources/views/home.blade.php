@@ -2,6 +2,8 @@
 <html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
 <style>
     .w3-bar{
         background: #e6efff;
@@ -17,55 +19,23 @@
 <body>
 <img class="menu-icon" src="/storage/app/public/cd.png" width="100" height="100">
 <!-- Navigation -->
-<nav class="w3-bar">
-    <a href="{{ url('/home') }}" >Home</a>
-    <a href="{{ url('/genres') }}" >Genres</a>
-    <a href="{{ url('/albums') }}" >Albums</a>
-    <a href="{{ url('/artists') }}" >Artists</a>
-    <a href="{{ url('/login') }}" >Login</a>
+<nav class="w3-bar container">
+    @auth
+        <a href="{{ url('/') }}" >Home</a>
+        <a href="{{ url('/genres') }}" >Genres</a>
+        <a href="{{ url('/albums') }}" >Albums</a>
+        <a href="{{ url('/artists') }}" >Artists</a>
+    @endauth
+    @guest
+        <a href="{{ url('/login') }}" >Login</a>
+    @endguest
 </nav>
 
-{{--<section>--}}
-{{--    <img class="mySlides" src="img_band_la.jpg"--}}
-{{--         style="width:60%">--}}
-{{--    <img class="mySlides" src="img_band_ny.jpg"--}}
-{{--         style="width:60%">--}}
-{{--    <img class="mySlides" src="img_band_chicago.jpg"--}}
-{{--         style="width:600%">--}}
-{{--</section>--}}
-
-<!-- Band Description -->
-{{--<section class="w3-container w3-center w3-content" style="max-width:600px">--}}
-{{--    <h2 class="w3-wide">THE BAND</h2>--}}
-{{--    <p class="w3-opacity"><i>We love music</i></p>--}}
-{{--    <p class="w3-justify">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>--}}
-{{--</section>--}}
-
-
-<footer>
-    <p>
-        Powered by <a href="Nina Potskhshvili Zhong" target="_blank">Nina</a>
-    </p>
-</footer>
-<a href="#" id="menu-icon"></a>
-{{--<script>--}}
-{{--    // Automatic Slideshow - change image every 3 seconds--}}
-{{--    var myIndex = 0;--}}
-{{--    carousel();--}}
-
-{{--    function carousel() {--}}
-{{--        var i;--}}
-{{--        var x = document.getElementsByClassName("mySlides");--}}
-{{--        for (i = 0; i < x.length; i++) {--}}
-{{--            x[i].style.display = "none";--}}
-{{--        }--}}
-{{--        myIndex++;--}}
-{{--        if (myIndex > x.length) {myIndex = 1}--}}
-{{--        x[myIndex-1].style.display = "block";--}}
-{{--        setTimeout(carousel, 3000);--}}
-{{--    }--}}
-</script>
-
+<div class="container">
+    @yield('content')
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 </html>
 

@@ -28,7 +28,7 @@ class RegistrationController extends Controller
 
 
         auth()->login($user);
-        return redirect()->to('/posts');
+        return redirect()->to('/');
     }
 
     public function login(){
@@ -45,7 +45,7 @@ class RegistrationController extends Controller
         $credentials = $request->except('_token');
 
         if (Auth::attempt($credentials)) {
-            return redirect('/home');
+            return redirect('/');
         }
         else{
             return redirect('login')->with('error');
