@@ -43,10 +43,15 @@ class RegistrationController extends Controller
         ]);
 
         $credentials = $request->except('_token');
+        //$user = Auth::user();
 
         if (Auth::attempt($credentials)) {
             return redirect('/');
         }
+//        elseif ($user->is_admin==1){
+//            return redirect('admin');
+//        }
+
         else{
             return redirect('login')->with('error');
         }
@@ -54,7 +59,7 @@ class RegistrationController extends Controller
     public function logout(){
 
         Auth::logout();
-        return redirect('/home');
+        return redirect('/');
 
     }
 

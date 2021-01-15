@@ -5,9 +5,13 @@
 @foreach($genre as $genres)
     <p>
         {{$genres->genre}}
-        {{ $genres->album }}
-        {{ $genres->album->pluck('artist') }}
     </p>
+    <div>
+        <li>{{ $genres->album->pluck('album_name')}}</li>
+        {{$genres->album->pluck('album_img')}}
+        <li>{{ $genres->album}}</li>
+
+    </div>
 
 @endforeach
 

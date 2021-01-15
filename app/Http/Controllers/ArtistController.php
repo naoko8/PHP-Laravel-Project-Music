@@ -15,11 +15,7 @@ class ArtistController extends Controller
     }
 
     public function artist(Artist $id){
-//        $artist_album = Album::get();
-//        $artist = Artist::where('id', $id)->get();
-        //dd($artist_album);
-//        return view('artist')->with('artist',$artist);
         return view('artist', compact('id'));
-       // )->with('artist',$artist);
+
     }
 }

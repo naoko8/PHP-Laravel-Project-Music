@@ -13,7 +13,6 @@ class GenreController extends Controller
         return view('genres')->with('genres',$genres);
     }
     public function genre($id){
-
         $genre = Genre::where('id',$id)->get();
         return view('genre')->with('genre',$genre);
     }

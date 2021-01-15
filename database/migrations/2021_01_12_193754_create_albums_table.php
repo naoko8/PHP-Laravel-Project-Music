@@ -15,7 +15,7 @@ class CreateAlbumsTable extends Migration
     {
         Schema::create('albums', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('artist_id')->constrained()->onDelete('cascade');
+            $table->foreignId('artist_id')->default('')->constrained()->onDelete('cascade');
             $table->string('album_name');
             $table->string('album_img');
         });

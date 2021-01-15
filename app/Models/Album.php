@@ -7,6 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Album extends Model
 {
+    public $timestamps = false;
+
+
+    protected $fillable = [
+        'artist_id',
+        'album_name'
+    ];
     public function artist(){
         return $this->belongsTo(Artist::class);
     }

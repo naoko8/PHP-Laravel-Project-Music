@@ -5,26 +5,32 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
 <style>
+
     .w3-bar{
         background: #e6efff;
         font-size: 35px;
     }
     .menu-icon {
 
-        width: 100px;
-        height: 100px;
+        width: 200px;
+        height: 200px;
 
     }
 </style>
-<body>
-<img class="menu-icon" src="/storage/app/public/cd.png" width="100" height="100">
-<!-- Navigation -->
+<body style="background-color:#ffd0da">
+<img class="menu-icon" src="{{asset('image/icon.png')}}" width="100" height="100">
 <nav class="w3-bar container">
+
     @auth
         <a href="{{ url('/') }}" >Home</a>
         <a href="{{ url('/genres') }}" >Genres</a>
         <a href="{{ url('/albums') }}" >Albums</a>
         <a href="{{ url('/artists') }}" >Artists</a>
+
+        @if(auth()->user()->is_admin==true)
+            <a href="{{ url('/admin') }}">Admin</a>
+        @endif
+
     @endauth
     @guest
         <a href="{{ url('/login') }}" >Login</a>

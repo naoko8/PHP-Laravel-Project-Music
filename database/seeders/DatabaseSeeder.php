@@ -15,10 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        DB::table('artists')->insert([
-            'name' => Str::random(10),
-            'artist_img' => Str::random(10),
-        ]);
+
+//        DB::table('artists')->insert([
+//            'name' => Str::random(10),
+//            'artist_img' => Str::random(10),
+//        ]);
     }
 }
