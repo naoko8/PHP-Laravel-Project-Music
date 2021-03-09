@@ -9,6 +9,6 @@
 
 Project for PHP with Laravel Framework. 
 Web site is for music listeners and artists.
-I have Admin view, as well as User view. Admin should log in with username and password which is already in SQL database. Features that admin can: Delete Artist and Album, change Artist or album name and add Genres. If Admin deletes Artist album will delete automaticly. I used realtional database for that. 
+I have Admin view, as well as User view. Admin should log in with username and password which is already in SQL database. Features that admin can: Delete Artist and Album, change Artist or album name and add Genres. If Admin deletes Artist, album will delete automaticly. I used realtional database for that. 
 
 
